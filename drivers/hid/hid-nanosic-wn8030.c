@@ -502,7 +502,10 @@ static irqreturn_t nanosic_wn8030_handler(int irq, void *data)
 		break;
 	case 0x23:
 		nanosic_wn8030_handle_vendor(nanosic, buf);
+		print_hex_dump(KERN_INFO, "", DUMP_PREFIX_OFFSET, 16, 1, buf, sizeof(buf), false);
 		break;
+	default:
+		print_hex_dump(KERN_INFO, "", DUMP_PREFIX_OFFSET, 16, 1, buf, sizeof(buf), false);
 	}
 
 	//print_hex_dump(KERN_INFO, "", DUMP_PREFIX_OFFSET, 16, 1, buf, sizeof(buf), false);
