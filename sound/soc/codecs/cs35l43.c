@@ -59,6 +59,9 @@ static void cs35l43_pm_runtime_setup(struct cs35l43_private *cs35l43);
 static void cs35l43_log_status(struct cs35l43_private *cs35l43);
 static int cs35l43_check_dsp_regs(struct cs35l43_private *cs35l43);
 
+int cs35l43_component_write(struct snd_soc_component *component, unsigned int reg, unsigned int val);
+unsigned int cs35l43_component_read(struct snd_soc_component *component, unsigned int reg);
+
 static const DECLARE_TLV_DB_SCALE(dig_vol_tlv, -10225, 25, true);
 static DECLARE_TLV_DB_SCALE(amp_gain_tlv, 0, 1, 1);
 
